@@ -36,7 +36,7 @@ define openondemand::conf (
   if $data {
     $_content = join([
         '# File managed by Puppet - DO NOT EDIT',
-        stdlib::to_yaml($data, { 'line_width' => -1 }),
+        openondemand::to_yaml_no_wrap($data),
         '',
     ], "\n")
   } elsif $content_template {
